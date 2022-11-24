@@ -1,0 +1,14 @@
+<div>
+  <ul>
+    <li *ngFor="let item of todoList; let i = index; trackBy:trackByFn">
+      <span *ngIf="isEdit[i]; else elseBlock">
+        <input type="text" [(ngModel)]="todoList[i]">
+      </span>
+      <ng-template #elseBlock>
+        {{item}}
+      </ng-template>
+      <button (click)="this.isEdit[i] = !this.isEdit[i];">{{ isEdit[i] == true ? 'Save' : 'Edit' }}</button>
+      <button (click)="removeItem(i)">Delete</button>
+    </li>
+  </ul>
+</div>

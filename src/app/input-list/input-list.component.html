@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<div>
+  <div>Task</div>
+  <div><input [(ngModel)]="taskName" type="text" id="taskname" /></div>
+  <div><button (click)="AddItem(taskName)">Add Task</button></div>
+</div>
+
+<app-todolist [todoList]="inputTask"></app-todolist>
